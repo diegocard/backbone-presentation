@@ -1,4 +1,4 @@
-backbone-presentation
+Backbone.js presentation
 =====================
 
-backbone-presentation
+Presentation on Backbone.js
