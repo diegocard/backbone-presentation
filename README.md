@@ -18,9 +18,9 @@ Contents
  5. Examples
  6. Demo
 
-English
+Spanish
 ---------
-- [View](https://slid.es/diegocard/backbone-presentation-en) on Slid.es (press spacebar to change slides)
+- [View](https://slid.es/diegocard/backbone-presentation-es) on Slid.es (press spacebar to change slides)
 
 Built using
 ---------
