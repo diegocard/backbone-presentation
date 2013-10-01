@@ -7,15 +7,11 @@ To view a printable PDF version of the slides, open them in chrome and add ?prin
 
 Contents
 ---------
- 1. Introduction
- 2. Architecture
- 3. Advantages and disadvantages
- 4. Models
- 5. Views
- 6. Collections
- 7. Routing
- 8. Examples
- 9. Demo
+ 1. Main components
+ 2. Templating
+ 3. Route management
+ 4. Use an existing API
+ 5. Modularization
 
 Spanish
 ---------
