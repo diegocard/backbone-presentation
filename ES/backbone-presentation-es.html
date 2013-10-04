@@ -11,6 +11,10 @@
 		<meta content="authenticity_token" name="csrf-param" />
 		<meta content="LkYKTCQSFOeVYwwtXDhK1Leuyhc8BWlT0IWD19stdcs=" name="csrf-token" />
 		<style id="user-css-output" type="text/css"></style>
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="../media/css/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -22,12 +26,9 @@
 </div>
 <div>Diego Cardozo</div>
 <a href="https://github.com/diegocard/backbone-presentation">github.com/diegocard/backbone-presentation</a>
-
-
 </section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Objetivos</h2>
 <div>
 <span><br></span>
-
 <ul>
 <li>Esta charla no es<span> un tutorial de Backbone</span>
 </li>
@@ -93,7 +94,6 @@
 <br>
 </div>
 </section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introducción (3)</h2>
-
 <br><ul>
 <li>
 <span>Backbone brinda</span><br>
@@ -126,9 +126,6 @@
 <img src="../media/images/Architecture.png"><br>
 </div>
 </div>
-
-
-
 </section><section data-background-color="rgba( 255, 122, 0, 0.6 )"><h2><font color="#ffffff">Arquitectura (2)</font></h2>
 <div>
     <font color="#ffffff"><br></font>
@@ -167,8 +164,6 @@
 <pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var </font></i>Users <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Collection.extend({</code><code>        <span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">url</span>: <font color="#ffd966">'/users'</font></code><code>});
 </code></pre>
 </div>
-
-
 </section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (3)</h2>
 <div><i><br></i></div>
 <div><i>Vista</i></div>
@@ -275,10 +270,6 @@
 │   └── <font color="#e06666">text.js</font>  //<span style="font-family: monospace; font-style: normal; font-variant: normal;">Plugin de Require.js</span>
 └── <font color="#6d9eeb">index.html</font></font></code></pre>
 </div>
-
-
-
-
 </section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Estructura (3)</h2>
 <div>
 <i>Ejemplo</i><br>
