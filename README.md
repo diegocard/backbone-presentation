@@ -21,3 +21,7 @@ Built using
 ---------
 - [Reveal.js](http://lab.hakim.se/reveal-js/)
 - [Slid.es](http://www.slid.es/)
+
+Thanks to
+---------
+- [backbonetutorials.com](http://backbonetutorials.com/) for the demo and modularization code.
