@@ -7,16 +7,11 @@ To view a printable PDF version of the slides, open them in chrome and add ?prin
 
 Contents
 ---------
- 1. Motivation
- 2. Introduction
- 3. Architecture
- 4. Advantages and disadvantages
- 5. Models
- 6. Views
- 7. Collections
- 8. Routing
- 5. Examples
- 6. Demo
+ 1. Introduction
+ 2. Architecture
+ 3. Example (Demo)
+ 4. Backbone components
+ 5. Structuring an application
 
 Spanish
 ---------
