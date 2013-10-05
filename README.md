@@ -17,6 +17,10 @@ Spanish
 ---------
 - [View](https://slid.es/diegocard/backbone-presentation-es) on Slid.es (press spacebar to change slides)
 
+English
+---------
+- Under construction
+
 Built using
 ---------
 - [Reveal.js](http://lab.hakim.se/reveal-js/)
