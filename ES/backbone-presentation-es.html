@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-	<html class="decks present loaded reveal-viewport theme-font-news theme-color-grey-blue">
+	<html class="base present loaded">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Backbone Presentation: Slides</title>
+		<title>Organización de aplicaciones con Backbone.js: Slides</title>
 		<meta name="description" content="Slides">
-		<link rel="stylesheet" href="../media/css/styles.min.css">
-    	<link rel="stylesheet" href="../media/css/fonts.css">
-		<meta content="authenticity_token" name="csrf-param" />
-		<meta content="LkYKTCQSFOeVYwwtXDhK1Leuyhc8BWlT0IWD19stdcs=" name="csrf-token" />
+
+		<link rel="stylesheet" type="text/css" href="../media/css/offline.css">
+		<link rel="stylesheet" type="text/css" href="../media/css/reveal.css">
 		<style id="user-css-output" type="text/css"></style>
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-    <script>
-        document.write( '<link rel="stylesheet" href="../media/css/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    </script>
 	</head>
-	<body>
+	<body class="reveal-viewport theme-font-news theme-color-grey-blue">
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Organización de aplicaciones con Backbone.js</h2>
@@ -26,9 +21,12 @@
 </div>
 <div>Diego Cardozo</div>
 <a href="https://github.com/diegocard/backbone-presentation">github.com/diegocard/backbone-presentation</a>
+
+
 </section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Objetivos</h2>
 <div>
 <span><br></span>
+
 <ul>
 <li>Esta charla no es<span> un tutorial de Backbone</span>
 </li>
@@ -85,15 +83,14 @@
 </ul>
 </ul></section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introducción (2)</h2>
 <div>
-<img src="../media/images/Spaghetti.png" style="width: 355px; height: 255.01291989664082px; max-height: none; max-width: none;">
-<img src="../media/images/Addition-sign.gif" style="width: 128px; height: 124.16px; max-height: none; max-width: none; margin-bottom: 84px;"><span> </span><span>
-</span>
-<img src="../media/images/Flames.png" style="width: 295px; height: 357.5933202357564px; max-height: none; max-width: none;"><br>
+<img src="../media/images/Spaghetti.png" style="width: 355px; height: 255.01291989664082px; max-height: none; max-width: none;"><img src="backbone-presentation-es/107855-addition_sign.gif" style="width: 128px; height: 124.16px; max-height: none; max-width: none; margin-bottom: 84px;"><span> </span><span>
+</span><img src="../media/images/Flames.png" style="width: 295px; height: 357.5933202357564px; max-height: none; max-width: none;"><br>
 </div>
 <div>
 <br>
 </div>
 </section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introducción (3)</h2>
+
 <br><ul>
 <li>
 <span>Backbone brinda</span><br>
@@ -126,6 +123,9 @@
 <img src="../media/images/Architecture.png"><br>
 </div>
 </div>
+
+
+
 </section><section data-background-color="rgba( 255, 122, 0, 0.6 )"><h2><font color="#ffffff">Arquitectura (2)</font></h2>
 <div>
     <font color="#ffffff"><br></font>
@@ -146,7 +146,7 @@
     <br>
 </h1>
 <h1>Ejemplo</h1>
-<a href="https://github.com/diegocard/backbone-presentation/demo">github.com/diegocard/backbone-presentation/demo</a>
+<a href="https://github.com/diegocard/backbone-demo">github.com/diegocard/backbone-demo</a>
 </section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (1)</h2>
 <div>
     <br>
@@ -154,7 +154,7 @@
 <div>
 <i>Modelo</i>
 </div>
-<pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var </font></i>User <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Model.extend({</code><code>      <font color="#93c47d">urlRoot</font>: <font color="#ffe599">'/users'</font></code><code>}); </code></pre>
+<pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal;color: #6fa8dc"><font color="#6fa8dc">var </font></i>User <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Model.extend({</code><code>      <font color="#93c47d">urlRoot</font>: <font color="#ffe599">'/users'</font></code><code>}); </code></pre>
 <br></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (2)</h2>
 <div>
     <br>
@@ -164,24 +164,62 @@
 <pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var </font></i>Users <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Collection.extend({</code><code>        <span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">url</span>: <font color="#ffd966">'/users'</font></code><code>});
 </code></pre>
 </div>
+
+
 </section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (3)</h2>
-<div><i><br></i></div>
-<div><i>Vista</i></div>
-<div><pre><code><i><font color="#6fa8dc">var </font></i>UserListView <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.View.extend({
+<div>
+<i>
+<br></i>
+</div>
+<div>
+<i>Vista</i>
+</div>
+<div>
+<pre><code><i style="color: #6fa8dc"><font color="#6fa8dc">var </font></i>UserListView <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.View.extend({
     <font color="#93c47d">el</font>: <font color="#ffd966">'.page'</font>,
     <font color="#93c47d">render</font>: <i><font color="#6fa8dc">function </font></i>() {
         <i><font color="#6fa8dc">var </font></i>that <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> this;
-        <i><font color="#6fa8dc">var </font></i>users <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> <font color="#e06666">new</font><font color="#c27ba0" style="font-style: inherit; font-variant: inherit;"> </font><span style="font-family: monospace;">Users();</span></code><code>        users.fetch({
-            <font color="#93c47d">success</font>: <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">function </font></i>(<font color="#e69138"><i>users</i></font>) {
-                <i><font color="#6fa8dc">var </font></i>template <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> _.template(
-<span style="font-family: monospace;">                    </span><b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">$</font></b><span style="font-family: monospace;">(<font color="#ffd966">'#user-list-template'</font>).html(),
-</span>                    {<font color="#93c47d">users</font>: users.models}
-                );
+        <i><font color="#6fa8dc">var </font></i>users <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> <font color="#e06666">new</font><font color="#c27ba0" style="font-style: inherit; font-variant: inherit;"> </font><span style="font-family: monospace;">Users();
+</span><span style="font-family: monospace;">        users.fetch({
+</span><span style="font-family: monospace;">            </span><font color="#93c47d" style="font-style: inherit; font-variant: inherit;">success</font><span style="font-family: monospace;">: </span><i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">function </font></i><span style="font-family: monospace;">(</span><font color="#e69138" style="font-style: inherit; font-variant: inherit;"><i>users</i></font><span style="font-family: monospace;">) {
+</span><span style="font-family: monospace;">                </span><i style="font-family: monospace;"><font color="#6fa8dc">var </font></i><span style="font-family: monospace;">template </span><b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b><span style="font-family: monospace;"> _.template(
+</span><span style="font-family: monospace;">                    </span><b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">$</font></b><span style="font-family: monospace;">(<font color="#ffd966">'#user-list-template'</font>).html(),
+</span><span style="font-family: monospace;">                    {</span><font color="#93c47d" style="font-style: inherit; font-variant: inherit;">users</font><span style="font-family: monospace;">: users.models}</span></code><code>                );
 <span style="font-family: monospace;">                that.</span><b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">$</font></b><span style="font-family: monospace;">el.html(template);
 </span><span style="font-family: monospace;">            }
 </span><span style="font-family: monospace;">        })
 </span><span style="font-family: monospace;">    }
-</span><span style="font-family: monospace;">});</span></code></pre></div></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (4)</h2>
+</span><span style="font-family: monospace;">});</span></code></pre>
+</div>
+</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (4)</h2>
+<div>
+<i>
+<br></i>
+</div>
+<div>
+<i>Manejo de eventos</i>
+</div>
+<pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal; color: rgb(111, 168, 220);"><font color="#6fa8dc">var </font></i>UserEditView = Backbone.View.extend({
+<span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">    </span><span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">el</span>: <font color="#ffd966">'.page'</font>,
+<span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">    </span><span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">events</span>: {
+        <font color="#ffd966">'submit .edit-user-form'</font>: <font color="#ffd966">'saveUser'</font>,
+        <font color="#ffd966">'click .delete'</font>: <font color="#ffd966">'deleteUser'</font>
+    },
+    <font color="#93c47d">saveUser</font>: <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">function </font></i>(<font color="#ff9900"><i>ev</i></font>) {
+        <i style="font-family: monospace; font-size: 20px; font-variant: normal; color: rgb(111, 168, 220);"><font color="#6fa8dc">var </font></i>userDetails <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">$</font></b>(ev.currentTarget).serializeObject();
+        <i style="font-family: monospace; font-size: 20px; font-variant: normal; color: rgb(111, 168, 220);"><font color="#6fa8dc">var </font></i>user <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b><span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"> </span><font color="#e06666">new</font> User();
+        user.save(userDetails, {
+            <span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">success</span>: <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">function </font></i>(<font color="#ff9900"><i>user</i></font>) {
+                router.navigate(<font color="#ffd966">''</font>, {<font color="#93c47d">trigger</font>:<font color="#6fa8dc"><span><i>true</i></span></font>});
+            }
+        });
+    }
+});</code></pre>
+<div>
+</div>
+
+
+</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (5)</h2>
 <div><br></div>
 <div>
 <i>Template</i><br>
@@ -206,7 +244,7 @@
       &lt;<span style="font-family: monospace; font-size: 18px; font-style: normal; font-variant: normal;">%</span> }); <span style="font-family: monospace; font-size: 18px; font-style: normal; font-variant: normal;">%</span>&gt;</font>
   <font color="#e06666">  &lt;/</font></font><font color="#e06666"><span style="font-family: monospace; font-size: 18px; font-style: normal; font-variant: normal;">tbody</span><span style="font-size: 18px; font-family: monospace;">&gt;
 </span><span style="font-size: 18px; font-family: monospace;">  &lt;/</span><span style="font-size: 18px; font-family: monospace; font-style: normal; font-variant: normal;">table</span><span style="font-size: 18px; font-family: monospace;">&gt;
-</span><span style="font-size: 18px; font-family: monospace;">&lt;/</span><span style="font-size: 18px; font-family: monospace; font-style: normal; font-variant: normal;">script</span><span style="font-size: 18px; font-family: monospace;">&gt;</span></font></code></pre></div></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (5)</h2>
+</span><span style="font-size: 18px; font-family: monospace;">&lt;/</span><span style="font-size: 18px; font-family: monospace; font-style: normal; font-variant: normal;">script</span><span style="font-size: 18px; font-family: monospace;">&gt;</span></font></code></pre></div></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (6)</h2>
 <div><br></div>
 <div><i>Router</i></div>
 <div><pre><code> <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var </font></i>Router <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Router.extend({
@@ -270,12 +308,15 @@
 │   └── <font color="#e06666">text.js</font>  //<span style="font-family: monospace; font-style: normal; font-variant: normal;">Plugin de Require.js</span>
 └── <font color="#6d9eeb">index.html</font></font></code></pre>
 </div>
+
+
+
+
 </section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Estructura (3)</h2>
 <div>
-<i>Ejemplo</i><br>
+<i>Ejemplo: Lista de proyectos</i><br>
 </div>
-<div><pre><code><font color="#666666">// Archivo: views/project/list</font>
-<b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">define</font></b>([
+<div><pre><code><b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">define</font></b>([
   <font color="#ffd966">'jquery'</font>,
   <font color="#ffd966">'underscore'</font>,
   <font color="#ffd966">'backbone'</font>,
@@ -319,64 +360,65 @@
 <h1>¿Preguntas?</h1>
 <div><br></div>
 <div>
-<img src="../media/images/Backbone-logo.png" style="width: 302px; height: 302px; max-height: none; max-width: none;"><br>
+<img src="../media/Images/Backbone-logo.png" style="width: 302px; height: 302px; max-height: none; max-width: none;"><br>
 </div></section>
 			</div>
 		</div>
 
 		<script>
-	var SLConfig = {
-		current_user: {
-			name: "",
-			username: "diegocard",
-			enterprise: false,
-			pro: true
-		},
-		deck: {
-			user: {
-				name: "",
-				username: "diegocard"
-			},
-			id: "75938",
-			slug: "backbone-presentation-es",
-			title: "Backbone Presentation",
-			description: "Presentation on Backbone.js",
-			access_token: "trG7teZotYBmu5pj2aphbGLzi2kr",
-			published: true,
-			comments_visible: true,
-			background_transition: "slide",
-			transition: "linear",
-			theme_id: "",
-			theme_font: "news",
-			theme_color: "grey-blue",
-			rolling_links: false,
-			should_loop: false,
-			center: false,
-			rtl: false,
-			thumbnail_url: "../media/images/thumbnail.jpg"
-		}
-	}
-</script>
+			var SLConfig = {
+				current_user: {
+					name: "",
+					username: "diegocard",
+					pro: true
+				},
+				deck: {
+					user: {
+						name: "",
+						username: "diegocard"
+					},
+					id: "75938",
+					slug: "backbone-presentation-es",
+					title: "Organización de aplicaciones con Backbone.js",
+					description: "Diseño de clientes inteligentes con Backbone.js",
+					access_token: "trG7teZotYBmu5pj2aphbGLzi2kr",
+					published: true,
+					transition: "linear",
+					background_transition: "slide",
+					theme_font: "news",
+					theme_color: "grey-blue",
+					rolling_links: false,
+					should_loop: false,
+					center: false,
+					rtl: false
+				}
+			}
+		</script>
 
+		<script src="../media/scripts/head.min.js"></script>
 		<script src="../media/scripts/reveal.min.js"></script>
-		<script src="../media/scripts/custom-reveal.min.js"></script>
 		<script>
 			Reveal.initialize({
-				controls: false,
+				controls: true,
 				progress: true,
 				history: true,
 				mouseWheel: false,
 
-				rollingLinks: false,
+				rolling_links: SLConfig.deck.rolling_links || true,
 				center: SLConfig.deck.center || false,
 				loop: SLConfig.deck.should_loop || false,
 				rtl: SLConfig.deck.rtl || false,
 
 				transition: SLConfig.deck.transition,
-				backgroundTransition: SLConfig.deck.background_transition
-			});
+				backgroundTransition: SLConfig.deck.background_transition,
 
-			if( window.hljs ) hljs.initHighlightingOnLoad();
+				dependencies: [
+					{ src: '../media/scripts/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../media/scripts/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../media/scripts/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../media/scripts/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
 		</script>
 	</body>
 </html>
