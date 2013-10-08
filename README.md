@@ -11,7 +11,15 @@ Contents
  2. Architecture
  3. Example (Demo)
  4. Backbone components
+   - Models
+   - Collections
+   - Views
+   - Event handling
+   - Templates
+   - Router
  5. Structuring an application
+   - Suggested structure
+   - How to modularize your app
 
 Spanish
 ---------
