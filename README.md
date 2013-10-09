@@ -28,7 +28,8 @@ Spanish
 
 English
 ---------
-- Under construction
+- [View](https://slid.es/diegocard/backbone-presentation-en) on Slid.es (press spacebar to change slides)
+- Slideshare: Under construction
 
 Built using
 ---------
