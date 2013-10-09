@@ -4,17 +4,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Organización de aplicaciones con Backbone.js: Slides</title>
+		<title>Structuring Web Applications with Backbone.js: Slides</title>
 		<meta name="description" content="Slides">
 
-		<link rel="stylesheet" type="text/css" href="../media/css/offline.css">
-		<link rel="stylesheet" type="text/css" href="../media/css/reveal.css">
+        <link rel="stylesheet" type="text/css" href="../media/css/offline.css">
+        <link rel="stylesheet" type="text/css" href="../media/css/reveal.css">
 		<style id="user-css-output" type="text/css"></style>
 	</head>
 	<body class="reveal-viewport theme-font-news theme-color-grey-blue">
 		<div class="reveal">
 			<div class="slides">
-				<section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Organización de aplicaciones con Backbone.js</h2>
+				<section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Structuring web applications with Backbone.js</h2>
 <div>
 <img src="../media/images/Backbone-logo.png" style="width: 271px; height: 271px; max-height: none; max-width: none;"><span> </span>
 <br>
@@ -23,65 +23,65 @@
 <a href="https://github.com/diegocard/backbone-presentation">github.com/diegocard/backbone-presentation</a>
 
 
-</section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Objetivos</h2>
+</section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Goals</h2>
 <div>
 <span><br></span>
 
 <ul>
-<li>Esta charla no es<span> un tutorial de Backbone</span>
-</li>
-<li>Se centra en el diseño de clientes web inteligentes</li>
-<li><span>Vamos a usar Backbone como ejemplo</span></li>
-<li>
-<span>Vemos conceptos </span><span style="font-size: 36px; font-style: normal; font-variant: normal;">independientes de la tecnología</span>
-</li>
-<li><span>Aplicables a otras herramientas</span></li>
-<li><span>Y de paso aprendemos algo de Backbone</span></li>
+<li>This presentation isn't only a Backbone tutorial</li>
+<li>We'll focus on complex client design</li>
+<li><span>Using Backbone as the main tool</span></li>
+<li>Most concepts won't be tool-specific</li>
+<li><span>Can be applied to other tools like Angular or Knockout</span></li>
+<li><span>We'll learn Backbone through examples</span></li>
 </ul>
 <ul style="font-size: 36px; font-style: normal; font-variant: normal;"></ul>
-</div></section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>¿Que espero que se lleven?</h2>
+</div></section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>What do I want you to learn?</h2>
 <div>
 <br>
 </div>
 <div>
 <ul style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">
-<li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">Conceptos útiles para diseñar clientes complejos<br>
+<li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">Useful concepts for complex web client design<br>
 </li>
-<li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">Conocimientos básicos de Backbone</li>
-<li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">Ganas de aprender más<i style="text-align: center;">
-<br><br>Para los que conocen Backbone<br><br></i>
+<li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">Basic Backbone knowledge</li>
+<li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">
+Motivation to keep learning<br><br><i style="text-align: center;">For those who already know Backbone<br><br></i>
 </li>
 <li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">
-    <span>Buenas prácticas</span>
+    <span>Good practices</span>
 </li>
 <li style="font-size: 36.288230895996094px; font-style: normal; font-variant: normal;">
-    <span>Combinación con otras herramientas</span>
+    <span>Combination with other tools</span>
 </li>
 </ul>
 </div>
 
+
+
 </section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2>Agenda</h2>
 <br><ol>
-<li>Introducción</li>
-<li>Arquitectura</li>
-<li>Ejemplo</li>
-    <li>Componentes de Backbone</li>
-    <li>Estructurar una aplicación</li>
-</ol></section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introducción (1)</h2>
+<li>Introduction</li>
+<li>Architecture</li>
+<li>Example</li>
+    <li>Backbone components</li>
+    <li>Structuring a web application</li>
+</ol></section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introduction (1)</h2>
 
 <br><ul>
-<li>Los clientes web cuentan cada vez con mas recursos</li>
-    <li>Permite construir clientes mas inteligentes</li>
+<li>Web clients have better resources every day</li>
+    <li>We can now build smart clients</li>
     <li>
-<span>Pero los clientes complejos con jQuery...</span><br>
+<span>But complex applications with jQuery...</span>
+<br>
 </li>
 <ul style="font-size: 36px; font-style: normal; font-variant: normal;">
-<li>Son difíciles de construír</li>
-<li>Carecen de estructura</li>
-<li>Dificultan la reutilización</li>
-<li>Crear tu propia estructura sería reinventar la rueda</li>
+<li>Are hard to build</li>
+<li>Lack structure</li>
+<li>Do not favor reutilization</li>
+<li>Creating your own structure is reinventing the wheel</li>
 </ul>
-</ul></section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introducción (2)</h2>
+</ul></section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introduction (2)</h2>
 <div>
 <img src="../media/images/Spaghetti.png" style="width: 355px; height: 255.01291989664082px; max-height: none; max-width: none;"><img src="../media/images/Addition-sign.gif" style="width: 128px; height: 124.16px; max-height: none; max-width: none; margin-bottom: 84px;"><span> </span><span>
 </span><img src="../media/images/Flames.png" style="width: 295px; height: 357.5933202357564px; max-height: none; max-width: none;"><br>
@@ -89,29 +89,42 @@
 <div>
 <br>
 </div>
-</section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introducción (3)</h2>
+</section><section data-background-color="rgba( 50, 200, 90, 0.4 )"><h2>Introduction (3)</h2>
 
 <br><ul>
 <li>
-<span>Backbone brinda</span><br>
+<span>Backbone gives us</span>
+<br>
 </li>
 <ul>
-<li><span>Estructura al código JavaScript en el cliente</span></li>
-<li><span>Varias utilidades reutilizables</span></li>
+<li>
+<span>Structure for our client-side JavaScript code</span>
+</li>
+<li>
+<span>Several utilities</span>
+</li>
 </ul>
-<li>Básicamente es un framework MV*</li>
+<li>Basically, it is a MV* framework</li>
     <li>
-        <span>Organizamos el código en distintos componentes</span>
+        <span>We organize code in different components</span>
 </li>
 <ul>
-<li><span>Modelos</span></li>
-<li>Colecciones</li>
-<li><span>Vistas</span></li>
-<li><span>Templates</span></li>
-<li><span>Routers</span></li>
+<li>
+<span>Models</span>
+</li>
+<li>Collections</li>
+<li>
+<span>Views</span>
+</li>
+<li>
+<span>Templates</span>
+</li>
+<li>
+<span>Routers</span>
+</li>
 </ul>
 </ul></section><section data-background-color="rgba( 255, 122, 0, 0.6 )"><h2>
-    <font color="#ffffff">Arquitectura (1)</font>
+    <font color="#ffffff">Architecture (1)</font>
 </h2>
 <div>
     <font color="#000000">
@@ -120,59 +133,97 @@
 <div style="background: white; border: 2px solid black;">
 
 <div>
-<img src="../media/images/Architecture-es.png"><br>
+<img src="../media/images/Architecture-en.png"><br>
 </div>
 </div>
 
 
 
-</section><section data-background-color="rgba( 255, 122, 0, 0.6 )"><h2><font color="#ffffff">Arquitectura (2)</font></h2>
+</section><section data-background-color="rgba( 255, 122, 0, 0.6 )"><h2>
+    <font color="#ffffff">Architecture (2)</font>
+</h2>
 <div>
-    <font color="#ffffff"><br></font>
+    <font color="#ffffff">
+<br></font>
 </div>
-<div><i><font color="#ffffff">Ventajas</font></i></div>
-<div><font color="#ffffff"><br></font></div>
+<div>
+<i>
+<font color="#ffffff">Advantages</font>
+</i>
+</div>
+<div>
+<font color="#ffffff">
+    <br></font>
+</div>
 <ul>
-<li><span style="text-align: center;"><font color="#ffffff">Mantenimiento más sencillo</font></span></li>
-<li><span style="text-align: center;"><font color="#ffffff">Distribución de carga </font></span></li>
-<li><span style="text-align: center;"><font color="#ffffff">Comienzo del desarrollo más ágil</font></span></li>
-<li><span style="text-align: center;"><font color="#ffffff">La interfaz es simplemente otro cliente</font></span></li>
-<li><span style="text-align: center;"><font color="#ffffff">Se presta muy bien para testing</font></span></li>
 <li>
-<span style="text-align: center;"><font color="#ffffff">Perfecto para combinar con aplicaciones móviles</font></span><br>
+<span style="text-align: center;">
+    <font color="#ffffff">Maintainability</font>
+</span>
+</li>
+<li>
+<span style="text-align: center;">
+    <font color="#ffffff">Load distribution </font>
+</span>
+</li>
+<li>
+<span style="text-align: center;">
+    <font color="#ffffff">Quicker start to the development process</font>
+</span>
+</li>
+<li>
+<span style="text-align: center;">
+    <font color="#ffffff">UI is only another client</font>
+</span>
+</li>
+<li>
+<span style="text-align: center;">
+    <font color="#ffffff">Great for testing</font>
+</span>
+</li>
+<li>
+<span style="text-align: center;">
+<font color="#ffffff">Perfect for combining with mobile apps</font>
+</span>
+<br>
 </li>
 </ul>
-<br> </section><section><h1>
+<br> 
+</section><section><h1>
     <br>
 </h1>
-<h1>Ejemplo</h1>
+<h1>Example</h1>
 <a href="https://github.com/diegocard/backbone-presentation/tree/master/demo">github.com/diegocard/backbone-presentation/demo</a>
-</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (1)</h2>
+
+</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Components (1)</h2>
 <div>
     <br>
 </div>
 <div>
-<i>Modelo</i>
+<i>Model</i>
 </div>
 <pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal;color: #6fa8dc"><font color="#6fa8dc">var </font></i>User <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Model.extend({</code><code>      <font color="#93c47d">urlRoot</font>: <font color="#ffe599">'/users'</font></code><code>}); </code></pre>
-<br></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (2)</h2>
+<br></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Components (2)</h2>
 <div>
     <br>
 </div>
-<div><i>Colección</i></div>
+<div>
+<i>Collection</i>
+</div>
 <div>
 <pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var </font></i>Users <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Collection.extend({</code><code>        <span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">url</span>: <font color="#ffd966">'/users'</font></code><code>});
 </code></pre>
 </div>
 
 
-</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (3)</h2>
+
+</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Components (3)</h2>
 <div>
 <i>
 <br></i>
 </div>
 <div>
-<i>Vista</i>
+<i>View</i>
 </div>
 <div>
 <pre><code><i style="color: #6fa8dc"><font color="#6fa8dc">var </font></i>UserListView <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.View.extend({
@@ -191,15 +242,15 @@
 </span><span style="font-family: monospace;">    }
 </span><span style="font-family: monospace;">});</span></code></pre>
 </div>
-</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (4)</h2>
+</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Components (4)</h2>
 <div>
 <i>
 <br></i>
 </div>
 <div>
-<i>Manejo de eventos</i>
+<i>Event handling</i>
 </div>
-<pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal; color: rgb(111, 168, 220);"><font color="#6fa8dc">var </font></i>UserEditView = Backbone.View.extend({
+<pre><code><i style="font-family: monospace; font-size: 20px; font-variant: normal; color: rgb(111, 168, 220);"><font color="#6fa8dc">var </font></i>UserEditView <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.View.extend({
 <span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">    </span><span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">el</span>: <font color="#ffd966">'.page'</font>,
 <span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">    </span><span style="color: rgb(147, 196, 125); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">events</span>: {
         <font color="#ffd966">'submit .edit-user-form'</font>: <font color="#ffd966">'saveUser'</font>,
@@ -219,7 +270,7 @@
 </div>
 
 
-</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (5)</h2>
+</section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Components (5)</h2>
 <div><br></div>
 <div>
 <i>Template</i><br>
@@ -244,7 +295,7 @@
       &lt;<span style="font-family: monospace; font-size: 18px; font-style: normal; font-variant: normal;">%</span> }); <span style="font-family: monospace; font-size: 18px; font-style: normal; font-variant: normal;">%</span>&gt;</font>
   <font color="#e06666">  &lt;/</font></font><font color="#e06666"><span style="font-family: monospace; font-size: 18px; font-style: normal; font-variant: normal;">tbody</span><span style="font-size: 18px; font-family: monospace;">&gt;
 </span><span style="font-size: 18px; font-family: monospace;">  &lt;/</span><span style="font-size: 18px; font-family: monospace; font-style: normal; font-variant: normal;">table</span><span style="font-size: 18px; font-family: monospace;">&gt;
-</span><span style="font-size: 18px; font-family: monospace;">&lt;/</span><span style="font-size: 18px; font-family: monospace; font-style: normal; font-variant: normal;">script</span><span style="font-size: 18px; font-family: monospace;">&gt;</span></font></code></pre></div></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Componentes (6)</h2>
+</span><span style="font-size: 18px; font-family: monospace;">&lt;/</span><span style="font-size: 18px; font-family: monospace; font-style: normal; font-variant: normal;">script</span><span style="font-size: 18px; font-family: monospace;">&gt;</span></font></code></pre></div></section><section data-background-color="rgba( 22, 152, 213, 0.6 )"><h2>Components (6)</h2>
 <div><br></div>
 <div><i>Router</i></div>
 <div><pre><code> <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var </font></i>Router <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.Router.extend({
@@ -253,23 +304,34 @@
          <font color="#ffd966">"edit/:id"</font>: <font color="#ffd966">"edit"</font>,
          <font color="#ffd966">"new"</font>: <font color="#ffd966">"edit"</font>,
      }
- });</code></pre></div></section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Estructura (1)</h2>
-<div><br></div>
-<div><ul>
-<li>Usar Backbone no es garantía de prolijidad</li>
-<li>Se precisa estructurar y modularizar la aplicación</li>
-<li>Para esto utilizamos Require.js</li>
-<li>Encontré un excelente ejemplo en:</li>
-<ul><li><a href="http://backbonetutorials.com/organizing-backbone-using-modules/"><font style="font-size: 32px;">backbonetutorials.com/organizing-backbone-using-modules</font></a></li></ul>
-</ul></div></section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Estructura (2)</h2>
+ });</code></pre></div></section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Structure (1)</h2>
 <div>
 <br>
 </div>
 <div>
-<i>Estructura sugerida</i>
+<ul>
+<li>Using backbone doesn't guarantee good practices</li>
+<li>We need to organize and modularize our application</li>
+<li>We can use Require.js to achieve this</li>
+<li>I found a great example at:</li>
+<ul>
+<li>
+    <a href="http://backbonetutorials.com/organizing-backbone-using-modules/">
+        <font style="font-size: 32px;">backbonetutorials.com/organizing-backbone-using-modules</font>
+    </a>
+</li>
+</ul>
+</ul>
+</div>
+</section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Structure (2)</h2>
+<div>
+<br>
 </div>
 <div>
-<pre><code><font style="font-size: 24px;"><font color="#ffd966">Raíz</font>
+<i>Suggested structure</i>
+</div>
+<div>
+<pre><code><font style="font-size: 24px;"><font color="#ffd966">Root</font>
 ├── <font color="#ffd966">imgs</font>
 ├── <font color="#ffd966">css</font>
 │   └── <font color="#93c47d">style.css</font>
@@ -302,39 +364,44 @@
 │   │       ├── <font color="#e06666">list.js</font>
 │   │       └── <font color="#e06666">edit.js</font>
 │   ├── <font color="#e06666">router.js</font>
-│   ├── <font color="#e06666">app.js</font>   //Inicializa el router
+│   ├── <font color="#e06666">app.js</font>   //Initialize the router
 │   ├── <font color="#e06666">main.js</font>
-│   ├── <font color="#e06666">order.js</font> //<span style="font-family: monospace; font-style: normal; font-variant: normal;">Plugin de Require.js</span>
-│   └── <font color="#e06666">text.js</font>  //<span style="font-family: monospace; font-style: normal; font-variant: normal;">Plugin de Require.js</span>
+│   ├── <font color="#e06666">order.js</font> //<span style="font-family: monospace; font-style: normal; font-variant: normal;">Require.js plugin</span>
+│   └── <font color="#e06666">text.js</font>  //<span style="font-family: monospace; font-style: normal; font-variant: normal;">Require.js plugin</span>
 └── <font color="#6d9eeb">index.html</font></font></code></pre>
 </div>
 
 
 
 
-</section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Estructura (3)</h2>
+
+</section><section data-background-color="rgba( 12, 25, 77, 0.6)"><h2>Structure (3)</h2>
 <div>
-<i>Ejemplo: Lista de proyectos</i><br>
+<i>Example: Proyect list</i>
+<br>
 </div>
-<div><pre><code><b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">define</font></b>([
+<div>
+<pre><code><b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">define</font></b>([
   <font color="#ffd966">'jquery'</font>,
   <font color="#ffd966">'underscore'</font>,
   <font color="#ffd966">'backbone'</font>,
-<font color="#666666">  // Usando el plugin text! de Require.js, 
-</font><span style="font-family: monospace;"><font color="#666666">  // cargamos las templates como texto plano</font>
+<font color="#666666">  // Using the text! plugin for Require.js, 
+</font><span style="font-family: monospace;"><font color="#666666">  // we can load templates as plain text</font>
 </span><span style="font-family: monospace;">  <font color="#ffd966">'text!templates/project/list.html'</font></span></code><code>], <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">function</font></i>(<span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#ff9900">$</font></span>, <font color="#ff9900">_</font>, <font color="#ff9900">Backbone</font>, <font color="#ff9900">projectListTemplate</font>){
   <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var</font></i> ProjectListView <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> Backbone.View.extend({
     <font color="#93c47d">el</font>: <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">$</font></b>(<font color="#ffd966">'#container'</font>),
     <font color="#93c47d">render</font>: <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">function</font></i>(){
-<font color="#666666">      // Compilamos la template usando Underscore
-</font><span style="color: rgb(102, 102, 102); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">      // y agregar la plantilla al elemento de la vista</span>
+<font color="#666666">      // Compile the template with underscore
+</font><span style="color: rgb(102, 102, 102); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">      // and add the template to the view element</span>
       <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var</font></i><span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"> </span>data <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> {};
       <i style="font-family: monospace; font-size: 20px; font-variant: normal;"><font color="#6fa8dc">var</font></i><span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"> </span>compiledTemplate <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">=</font></b> _.template(projectListTemplate, data);
       this.<b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">$</font></b>el.append(compiledTemplate);
     }
   });
-  <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">return </font></b>ProjectListView; <span style="color: rgb(102, 102, 102); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">// Retornar la vista</span>
-});</code></pre></div></section><section data-background-color="rgba( 0, 0, 0, 0.6 )"><h2>Recursos</h2>
+  <b style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;"><font color="#e06666">return </font></b>ProjectListView; <span style="color: rgb(102, 102, 102); font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">// Return the view</span>
+});</code></pre>
+</div>
+</section><section data-background-color="rgba( 0, 0, 0, 0.6 )"><h2>Resources</h2>
 <div>
     <br>
 </div>
@@ -357,7 +424,7 @@
     </ul>
 </div>
 </section><section data-background-color="rgba( 200, 50, 30, 0.6 )"><h2><br></h2>
-<h1>¿Preguntas?</h1>
+<h1>¿Questions?</h1>
 <div><br></div>
 <div>
 <img src="../media/Images/Backbone-logo.png" style="width: 302px; height: 302px; max-height: none; max-width: none;"><br>
@@ -377,11 +444,11 @@
 						name: "",
 						username: "diegocard"
 					},
-					id: "75938",
-					slug: "backbone-presentation-es",
-					title: "Organización de aplicaciones con Backbone.js",
-					description: "Diseño de clientes inteligentes con Backbone.js",
-					access_token: "trG7teZotYBmu5pj2aphbGLzi2kr",
+					id: "80008",
+					slug: "backbone-presentation-en",
+					title: "Structuring Web Applications with Backbone.js",
+					description: "Smart client design with Backbone.js",
+					access_token: "RU12Mr1GoqHxcXpwv3wF9WGUWBUr",
 					published: true,
 					transition: "linear",
 					background_transition: "slide",
@@ -395,8 +462,8 @@
 			}
 		</script>
 
-		<script src="../media/scripts/head.min.js"></script>
-		<script src="../media/scripts/reveal.min.js"></script>
+        <script src="../media/scripts/head.min.js"></script>
+        <script src="../media/scripts/reveal.min.js"></script>
 		<script>
 			Reveal.initialize({
 				controls: true,
@@ -412,12 +479,12 @@
 				transition: SLConfig.deck.transition,
 				backgroundTransition: SLConfig.deck.background_transition,
 
-				dependencies: [
-					{ src: '../media/scripts/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../media/scripts/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../media/scripts/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../media/scripts/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
+                dependencies: [
+                    { src: '../media/scripts/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../media/scripts/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../media/scripts/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../media/scripts/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
 			});
 		</script>
 	</body>
