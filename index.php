@@ -1,10 +1,1 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-	<?php
-	echo "Hello world!";
-	?>
-
-</body>
-</html>
+<?php include_once("index.html"); ?>
