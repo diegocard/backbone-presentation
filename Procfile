@@ -1,1 +1,1 @@
-web: node web.js
+php -S localhost:5000 -t
