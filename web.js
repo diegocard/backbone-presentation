@@ -15,6 +15,4 @@ app.get('/es', function(request, response) {
 })
 
 app.use(express.static(path.join(__dirname, 'media')));
-app.use(express.bodyParser());
-app.use(express.logger("short"));
 app.listen(port);
