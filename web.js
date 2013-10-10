@@ -14,4 +14,7 @@ app.get('/es', function(request, response) {
     response.sendfile(__dirname + '/ES/backbone-presentation-es.html');
 })
 
+app.use(express.static(path.join(__dirname, 'media')));
+app.use(express.bodyParser());
+app.use(express.logger("short"));
 app.listen(port);
