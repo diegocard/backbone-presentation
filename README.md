@@ -25,13 +25,11 @@ English
 ---------
 - [View](http://backbone-presentation.herokuapp.com/) hosted on Heroku
 - [View](https://slid.es/diegocard/backbone-presentation-en) on Slid.es (press spacebar to change slides)
-- Slideshare: Under construction
 
 Spanish
 ---------
 - [View](http://backbone-presentation.herokuapp.com/ES/backbone-presentation-es.html#/) hosted on Heroku
 - [View](https://slid.es/diegocard/backbone-presentation-es) on Slid.es (press spacebar to change slides)
-- Slideshare: Under construction
 
 Built using
 ---------
