@@ -4,6 +4,14 @@ var app = express.createServer();
  
 app.get('/', function(request, response) {
     response.sendfile(__dirname + '/index.html');
-}).configure(function() {
-    app.use('/media/images', express.static(__dirname + '/media/images'));
-}).listen(port);
+})
+
+app.get('/en', function(request, response) {
+    response.sendfile(__dirname + '/EN/backbone-presentation-en.html');
+})
+
+app.get('/es', function(request, response) {
+    response.sendfile(__dirname + '/ES/backbone-presentation-es.html');
+})
+
+app.listen(port);
