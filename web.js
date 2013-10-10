@@ -1,12 +1,9 @@
-var express = require("express");
-var app = express();
-app.use(express.logger());
-
+var express = require('express');
+var port = process.env.PORT || 3000;
+var app = express.createServer();
+ 
 app.get('/', function(request, response) {
-  response.send('Hello World!');
-});
-
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
+    response.sendfile(__dirname + '/index.html');
+}).configure(function() {
+    app.use('/media/images', express.static(__dirname + '/media/images'));
+}).listen(port);
