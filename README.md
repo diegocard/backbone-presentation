@@ -38,4 +38,4 @@ Built using
 
 Thanks to
 ---------
-- [backbonetutorials.com](http://backbonetutorials.com/) for the demo and modularization code.
+- [backbonetutorials.com](http://backbonetutorials.com/) for the demo and modularization code
