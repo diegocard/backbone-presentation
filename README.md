@@ -22,7 +22,7 @@ Contents
    - How to modularize your app
 
 English
----------
+--------
 - [View](http://backbone-presentation.herokuapp.com/) hosted on Heroku
 - [View](https://slid.es/diegocard/backbone-presentation-en) on Slid.es (press spacebar to change slides)
 
