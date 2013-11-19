@@ -27,7 +27,7 @@ English
 - [View](https://slid.es/diegocard/backbone-presentation-en) on Slid.es (press spacebar to change slides)
 
 Spanish
----------
+--------
 - [View](http://backbone-presentation.herokuapp.com/ES/backbone-presentation-es.html#/) hosted on Heroku
 - [View](https://slid.es/diegocard/backbone-presentation-es) on Slid.es (press spacebar to change slides)
 
