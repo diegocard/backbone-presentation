@@ -6,7 +6,7 @@ This presentation was created for a JavaScript Meetup in Uruguay.
 To view a printable PDF version of the slides, open them in chrome and add ?print-pdf/#/ to the URL.
 
 Contents
----------
+--------
  1. Introduction
  2. Architecture
  3. Example (Demo)
